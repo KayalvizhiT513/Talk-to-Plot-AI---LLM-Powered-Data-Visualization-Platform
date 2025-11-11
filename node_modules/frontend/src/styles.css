@@ -1,0 +1,133 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  gap: 1.5rem;
+}
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.chat-log {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chat-message {
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: rgba(30, 64, 175, 0.25);
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background: rgba(59, 130, 246, 0.35);
+}
+
+.chat-message.system {
+  background: rgba(76, 29, 149, 0.35);
+}
+
+.error-banner {
+  color: #fecaca;
+  background: rgba(220, 38, 38, 0.25);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.plots-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.plot-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.plot-placeholder {
+  font-style: italic;
+  color: rgba(148, 163, 184, 0.7);
+}
+
+.chatbox-form {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.chatbox-form input {
+  flex: 1;
+  border-radius: 9999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e2e8f0;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.chatbox-form button {
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.chatbox-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 960px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-panel {
+    order: 2;
+  }
+}
